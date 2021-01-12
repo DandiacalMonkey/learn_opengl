@@ -1,4 +1,8 @@
 ﻿#include "triangle.h"
+#include <GL/glew.h>
+#include <GL/freeglut.h>
+#include "GLTools.h"
+#include "GLShaderManager.h"
 
 static GLBatch triangle_batch;
 static GLShaderManager shader_manager;

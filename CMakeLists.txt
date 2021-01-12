@@ -1,6 +1,6 @@
 ﻿cmake_minimum_required(VERSION 3.19)
 
-project(opengl_test)
+project(learn_opengl)
 
 find_package(OpenGL REQUIRED)
 find_package(FreeGLUT REQUIRED)
@@ -14,5 +14,7 @@ main.cc
 triangle.h
 triangle.cc
 points.h
-points.cc)
+points.cc
+receptacle.h
+receptacle.cc)
 target_link_libraries(${PROJECT_NAME} OpenGL::GL OpenGL::GLU FreeGLUT::freeglut_static GLEW::glew_s gltools)

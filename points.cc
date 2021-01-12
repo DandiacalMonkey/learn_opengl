@@ -1,4 +1,8 @@
 ﻿#include "points.h"
+#include <GL/glew.h>
+#include <GL/freeglut.h>
+#include "GLTools.h"
+#include "GLShaderManager.h"
 
 static GLBatch point_batch;
 static GLShaderManager shader_manager;

@@ -1,9 +1,5 @@
 ﻿#pragma once
 
-#include "GLTools.h"
-#include "GLShaderManager.h"
-#include <GL/freeglut.h>
-
 namespace triangle {
 void DrawTriangle();
 void ChangeSize(int w, int h);
