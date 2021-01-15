@@ -1,6 +1,10 @@
 ﻿#include "points.h"
 #include <GL/glew.h>
+#ifdef WIN32
 #include <GL/freeglut.h>
+#elif __APPLE__
+#include <glut.h>
+#endif
 #include "GLTools.h"
 #include "GLShaderManager.h"
 

@@ -1,9 +1,13 @@
-﻿cmake_minimum_required(VERSION 3.19)
+﻿cmake_minimum_required(VERSION 3.1)
 
 project(learn_opengl)
 
 find_package(OpenGL REQUIRED)
-find_package(FreeGLUT REQUIRED)
+IF(WIN32)
+    find_package(FreeGLUT REQUIRED)
+ELSEIF(APPLE)
+    find_package(GLUT REQUIRED)
+ENDIF()
 find_package(GLEW REQUIRED)
 
 include_directories("${CMAKE_SOURCE_DIR}/third_party/GLTools/include")
@@ -17,4 +21,10 @@ points.h
 points.cc
 receptacle.h
 receptacle.cc)
-target_link_libraries(${PROJECT_NAME} OpenGL::GL OpenGL::GLU FreeGLUT::freeglut_static GLEW::glew_s gltools)
+
+IF(WIN32)
+    target_link_libraries(${PROJECT_NAME} OpenGL::GL OpenGL::GLU FreeGLUT::freeglut_static GLEW::glew_s gltools)
+ELSEIF(APPLE)
+    target_link_libraries(${PROJECT_NAME} OpenGL::GL OpenGL::GLU GLUT::GLUT GLEW::glew_s gltools)
+ENDIF()
+

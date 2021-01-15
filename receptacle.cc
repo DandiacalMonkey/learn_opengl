@@ -1,7 +1,11 @@
 ﻿#include "receptacle.h"
 #include <GL/glew.h>
 #include <GLFrustum.h>
+#ifdef WIN32
 #include <GL/freeglut.h>
+#elif __APPLE__
+#include <glut.h>
+#endif
 #include "GLTools.h"
 #include "StopWatch.h"
 #include "math3d.h"
